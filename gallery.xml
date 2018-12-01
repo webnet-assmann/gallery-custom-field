@@ -15,8 +15,4 @@
 		<folder>field</folder>
 		<folder>tmpl</folder>
 	</files>
-	<languages>
-		<language tag="en-GB">en-GB.plg_fields_gallery.ini</language>
-		<language tag="en-GB">en-GB.plg_fields_gallery.sys.ini</language>
-	</languages>
 </extension>
