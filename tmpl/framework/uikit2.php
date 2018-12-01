@@ -24,7 +24,8 @@ use Joomla\Filesystem\File;
 				$caption = $image->picture_caption;
 
 				if ($image->picture_title_on
-					&& (!empty($caption) && $image->picture_caption_position != 'overlay'))
+					&& empty($caption)
+					|| ($image->picture_title_on && !empty($caption) && $image->picture_caption_position != 'overlay'))
 				{
 					$attr = array('title' => $image->picture_title);
 				}
