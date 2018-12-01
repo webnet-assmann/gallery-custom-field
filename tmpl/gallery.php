@@ -13,14 +13,23 @@ if (!$field->value || $field->value == '-1')
 	return;
 }
 // get the folder name in images directory
-$path  = $field->value;
-$class = $fieldParams->get('container_class');
+$params = json_decode($field->value);
+$class = $params->container_class;
 
-// read the .jpg from the selected directory
-jimport('joomla.filesystem.folder');
-$filter = '(\.png|\.jpg|\.jpeg)';
-$images = JFolder::files('images/' . $path, $filter);
-$frwk   = 'default';
+if ($params->single_folder == 'folder')
+{
+	// read the .jpg from the selected directory
+	jimport('joomla.filesystem.folder');
+	$filter = '(\.png|\.jpg|\.jpeg)';
+	$imagesPath = 'images/' . $params->directory;
+	$images = JFolder::files($imagesPath, $filter);
+}
+else
+{
+	$images = (array) $params->single_pictures;
+}
+
+$frwk   = 'uikit2';
 ?>
 
 <div class="gallery_container<?php echo $class; ?>">

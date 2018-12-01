@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@webnet-assmann.de</authorEmail>
 	<authorUrl>www.webnet-assmann.de</authorUrl>
-	<version>1.0-alpha3</version>
+	<version>1.0-alpha4</version>
 	<description>PLG_FIELDS_GALLERY_DESC</description>
 	<files>
 		<filename plugin="gallery">gallery.php</filename>
