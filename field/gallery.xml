@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<field name="container_class"
+	       type="textarea"
+	       rows="5"
+	       label="PLG_FIELDS_GALLERY_PARAMS_CONTAINER_CLASS_SUFFIX_LABEL"
+	       description="PLG_FIELDS_GALLERY_PARAMS_CONTAINER_SUFFIX_CLASS_DESC"
+	       size="40"
+	/>
+
+	<field name="single_folder"
+	       type="radio"
+	       default="folder"
+	       label="PLG_FIELDS_GALLERY_PARAMS_SINGLE_FOLDER_LABEL"
+	       description="PLG_FIELDS_GALLERY_PARAMS_SINGLE_FOLDER_DESC"
+	>
+		<option value="single">PLG_FIELDS_GALLERY_PARAMS_SINGLE_FOLDER_OPTION_SINGLE_LABEL</option>
+		<option value="folder">PLG_FIELDS_GALLERY_PARAMS_SINGLE_FOLDER_OPTION_FOLDER_LABEL</option>
+	</field>
+
+	<field name="directory"
+	       type="folderlist"
+	       directory="images"
+	       hide_none="true"
+	       hide_default="true"
+	       recursive="true"
+	       label="PLG_FIELDS_GALLERY_PARAMS_DIRECTORY_LABEL"
+	       description="PLG_FIELDS_GALLERY_PARAMS_DIRECTORY_DESC"
+	       showon="single_folder:folder"
+	>
+		<option value="/">COM_FIELDS_FIELD_USE_GLOBAL</option>
+	</field>
+
+	<field name="single_pictures"
+	       type="subform"
+	       formsource="plugins/fields/gallery/field/single_picture.xml"
+	       multiple="true"
+	       min="1"
+	       label="Subform Field"
+	       description="Subform Field Description"
+	       showon="single_folder:single"
+	/>
+</form>

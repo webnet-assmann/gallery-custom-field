@@ -7,56 +7,16 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@webnet-assmann.de</authorEmail>
 	<authorUrl>www.webnet-assmann.de</authorUrl>
-	<version>1.0-alpha2</version>
+	<version>1.0-alpha3</version>
 	<description>PLG_FIELDS_GALLERY_DESC</description>
 	<files>
 		<filename plugin="gallery">gallery.php</filename>
 		<folder>language</folder>
-		<folder>params</folder>
+		<folder>field</folder>
 		<folder>tmpl</folder>
 	</files>
 	<languages>
 		<language tag="en-GB">en-GB.plg_fields_gallery.ini</language>
 		<language tag="en-GB">en-GB.plg_fields_gallery.sys.ini</language>
 	</languages>
-	<config>
-		<fields name="params">
-			<fieldset name="basic">
-				<field
-					name="directory"
-					type="folderlist"
-					directory="images"
-					required="true"
-					hide_none="true"
-					hide_default="true"
-					recursive="true"
-					default="/"
-					label="PLG_FIELDS_GALLERY_PARAMS_DIRECTORY_LABEL"
-					description=" "
-				>
-					<option value="/">/</option>
-				</field>
-	
-				<field
-					name="multiple"
-					type="radio"
-					class="btn-group btn-group-yesno"
-					default="0"
-					label="PLG_FIELDS_GALLERY_PARAMS_MULTIPLE_LABEL"
-					description="PLG_FIELDS_GALLERY_PARAMS_MULTIPLE_DESC"
-				>
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-	
-				<field
-					name="container_class"
-					type="textarea"
-					label="PLG_FIELDS_GALLERY_PARAMS_CONTAINER_CLASS_LABEL"
-					description="PLG_FIELDS_GALLERY_PARAMS_CONTAINER_CLASS_DESC"
-					size="40"
-				/>
-			</fieldset>
-		</fields>
-	</config>
 </extension>
