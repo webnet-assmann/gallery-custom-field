@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <extension type="plugin" version="3.7.0" group="fields" method="upgrade">
 	<name>plg_fields_gallery</name>
-	<author>Barbara Aßmann</author>
-	<creationDate>June 2017</creationDate>
-	<copyright>Copyright (C) 2005 - 2017 webnet-assmann.de. All rights reserved.</copyright>
+	<author>Guido de Gobbis, Barbara Aßmann</author>
+	<creationDate>November 2018</creationDate>
+	<copyright>Copyright (C) 2005 - 2018 Guido de Gobbis, Barbara Aßmann. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@webnet-assmann.de</authorEmail>
 	<authorUrl>www.webnet-assmann.de</authorUrl>
