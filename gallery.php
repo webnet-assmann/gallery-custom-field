@@ -16,7 +16,7 @@ JLoader::import('components.com_fields.libraries.fieldslistplugin', JPATH_ADMINI
  *
  * @since  3.7.0
  */
-class PlgFieldsUikitgallery extends FieldsListPlugin
+class PlgFieldsGallery extends FieldsListPlugin
 {
 	/**
 	 * Transforms the field into a DOM XML element and appends it as a child on the given parent.
