@@ -8,25 +8,27 @@
  */
 
 defined('_JEXEC') or die;
-if (!$field->value || $field->value == '-1') {
-    return;
+if (!$field->value || $field->value == '-1')
+{
+	return;
 }
 // get the folder name in images directory
-$path = $field->value;
+$path  = $field->value;
 $class = $fieldParams->get('container_class');
 
 // read the .jpg from the selected directory
 jimport('joomla.filesystem.folder');
-$filter = '.\.jpg$';
-$images = JFolder::files('images/' . $path);
+$filter = '(\.png|\.jpg|\.jpeg)';
+$images = JFolder::files('images/' . $path, $filter);
+$frwk   = 'default';
 ?>
 
-<div class="gallery <?php echo $class; ?>" data-uk-grid-margin>
-    <?php foreach ($images as $image) : ?>
-        <div>
-	        <?php $img = JHtml::_('image', 'images/' . $path . '/' . $image, str_replace("-"," ",substr(strtoupper($image),0,-4)), array('title' => str_replace("-"," ",substr(strtoupper($image),0,-4))), false); ?>
-
-	        <?php echo JHtml::_('link', 'images/' . $path . '/' . $image, $img, array('data-uk-lightbox' => '{group:\'my-group\'}', 'title' => str_replace("-"," ",substr(strtoupper($image),0,-4)))); ?>
-        </div>
-    <?php endforeach; ?>
+<div class="gallery_container<?php echo $class; ?>">
+	<?php
+	ob_start();
+	include 'framework/' . $frwk . '.php';;
+	$output = ob_get_contents();
+	ob_end_clean();
+	echo $output;
+	?>
 </div>
