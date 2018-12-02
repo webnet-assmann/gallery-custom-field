@@ -7,6 +7,16 @@
 	       description="PLG_FIELDS_GALLERY_PARAMS_CONTAINER_CLASS_SUFFIX_DESC"
 	/>
 
+	<field name="layout"
+	       type="list"
+	       label="PLG_FIELDS_GALLERY_LAYOUT_LABEL"
+	       description="PLG_FIELDS_GALLERY_LAYOUT_DESC"
+	>
+		<option value="">JDEFAULT</option>
+		<option value="uikit2">UIkit2</option>
+		<option value="uikit3">UIkit3</option>
+	</field>
+
 	<field name="single_folder"
 	       type="radio"
 	       default="folder"
