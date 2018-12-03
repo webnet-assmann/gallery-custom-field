@@ -11,22 +11,41 @@ defined('_JEXEC') or die;
 if (!$field->value || $field->value == '-1') {
     return;
 }
-// get the folder name in images directory
-$path = $field->value;
-$class = $fieldParams->get('container_class');
 
-// read the .jpg from the selected directory
-jimport('joomla.filesystem.folder');
-$filter = '.\.jpg$';
-$images = JFolder::files('images/' . $path);
+// get the folder name in images directory
+$params = json_decode($field->value);
+$class = $params->uikit3_grid_class;;
+
 ?>
 
-<div class="gallery <?php echo $class; ?>" data-uk-grid-margin>
-    <?php foreach ($images as $image) : ?>
+<div class="gallery <?php echo $class; ?>" uk-grid uk-lightbox>
+	<?php foreach ($images as $image) : ?>
         <div>
-	        <?php $img = JHtml::_('image', 'images/' . $path . '/' . $image, str_replace("-"," ",substr(strtoupper($image),0,-4)), array('title' => str_replace("-"," ",substr(strtoupper($image),0,-4))), false); ?>
+			<?php
+			$attr = null;
 
-	        <?php echo JHtml::_('link', 'images/' . $path . '/' . $image, $img, array('data-uk-lightbox' => '{group:\'my-group\'}', 'title' => str_replace("-"," ",substr(strtoupper($image),0,-4)))); ?>
+			if (empty($imagesPath))
+			{
+				$imgPath = $image->picture;
+				$alt     = $image->picture_alt;
+				$caption = $image->picture_caption;
+
+				if ($image->picture_title_on
+					&& empty($caption)
+					|| ($image->picture_title_on && !empty($caption) && $image->picture_caption_position != 'overlay'))
+				{
+					$attr = array('title' => $image->picture_title);
+				}
+			}
+			else
+			{
+				$imgPath = $imagesPath . '/' . $image;
+				$alt     = str_replace("-", " ", File::stripExt($image));
+			}
+
+			$img = JHtml::_('image', $imgPath, $alt, $attr, false); ?>
+
+			<?php echo JHtml::_('link', $imgPath, $img, array('data-caption' => $caption)); ?>
         </div>
-    <?php endforeach; ?>
+	<?php endforeach; ?>
 </div>
