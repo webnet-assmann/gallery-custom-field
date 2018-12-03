@@ -15,4 +15,7 @@
 		<folder>field</folder>
 		<folder>tmpl</folder>
 	</files>
+	<updateservers>
+		<server type="extension" priority="1" name="PLG_FIELDS_GALLERY">https://raw.githubusercontent.com/webnet-assmann/gallery-custom-field/master/update.xml</server>
+	</updateservers>
 </extension>
