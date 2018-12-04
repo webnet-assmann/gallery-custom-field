@@ -92,12 +92,11 @@ class PlgFieldsGallery extends FieldsPlugin
 		}
 
 		$fieldNode->setAttribute('type', 'subform');
-		$fieldNode->setAttribute('multiple', 'false');
 //		$fieldNode->setAttribute('layout', 'joomla.form.field.subform.repeatable-table');
 		$fieldNode->setAttribute('required', false);
 
 		// Build the form source
-		$fieldParams = JPATH_PLUGINS . '/' . $this->_type . '/' . $this->_name . '/field/gallery.xml';
+		$fieldParams = JPATH_PLUGINS . '/' . $this->_type . '/' . $this->_name . '/xml/gallery.xml';
 		$fieldsXml = new SimpleXMLElement($fieldParams, 0, true);
 
 		$fieldNode->setAttribute('formsource', $fieldsXml->asXML());

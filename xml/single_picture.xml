@@ -4,22 +4,20 @@
 	       type="media"
 	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_LABEL"
 	       description=""
-	       required="true"
 	/>
 
 	<field name="picture_alt"
 	       type="text"
 	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_ALT_LABEL"
 	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_ALT_DESC"
-	       required="true"
 	/>
 
 	<field name="picture_title_on"
 	       type="radio"
 	       class="btn-group btn-group-yesno"
 	       default="0"
-	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_TITLE_LABEL"
-	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_TITLE_DESC"
+	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_TITLE_ON_LABEL"
+	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_TITLE_ON_DESC"
 	>
 		<option value="0">JNO</option>
 		<option value="1">JYES</option>

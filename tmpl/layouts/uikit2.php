@@ -8,24 +8,19 @@
  */
 
 defined('_JEXEC') or die;
+
 use Joomla\Filesystem\File;
 
-if (!$field->value || $field->value == '-1') {
-	return;
-}
-
-// get the folder name in images directory
-$params = json_decode($field->value);
-$class = $params->uikit2_grid_class;
+extract($displayData);
 ?>
 
-<div class="gallery uk-grid <?php echo $class; ?>" data-uk-grid-margin>
+<div class="uk-grid gallery" data-uk-grid-margin>
 	<?php foreach ($images as $image) : ?>
-		<div>
+		<div class="uk-width-xlarge-1-2">
 			<?php
 			$attr = null;
 
-			if (empty($imagesPath))
+			if ($imagesPath === false)
 			{
 				$imgPath = $image->picture;
 				$alt     = $image->picture_alt;
