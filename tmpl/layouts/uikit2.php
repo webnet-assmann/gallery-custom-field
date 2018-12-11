@@ -10,8 +10,10 @@
 defined('_JEXEC') or die;
 
 use Joomla\Filesystem\File;
+use \Joomla\CMS\HTML\HTMLHelper;
 
 extract($displayData);
+$group = md5(json_encode($images));
 ?>
 
 <div class="uk-grid gallery" data-uk-grid-margin>
@@ -25,13 +27,6 @@ extract($displayData);
 				$imgPath = $image->picture;
 				$alt     = $image->picture_alt;
 				$caption = $image->picture_caption;
-
-				if ($image->picture_title_on
-					&& empty($caption)
-					|| ($image->picture_title_on && !empty($caption) && $image->picture_caption_position != 'overlay'))
-				{
-					$attr = array('title' => $image->picture_title);
-				}
 			}
 			else
 			{
@@ -39,9 +34,13 @@ extract($displayData);
 				$alt     = str_replace("-", " ", File::stripExt($image));
 			}
 
-			$img = JHtml::_('image', $imgPath, $alt, $attr, false); ?>
+			$img  = HTMLHelper::_('image', $imgPath, $alt, false);
+			$attr = array(
+				'title'            => $image->picture_title,
+				'data-uk-lightbox' => '{group:\'' . $group . '\'}',
+			);
 
-			<?php echo JHtml::_('link', $imgPath, $img, array('data-uk-lightbox' => '{group:\'gallery-group\'}')); ?>
+			echo HTMLHelper::_('link', $imgPath, $img, $attr); ?>
 		</div>
 	<?php endforeach; ?>
 </div>
