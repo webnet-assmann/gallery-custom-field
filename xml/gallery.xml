@@ -9,12 +9,23 @@
 
 	<field name="layout"
 	       type="list"
-	       label="PLG_FIELDS_GALLERY_LAYOUT_LABEL"
-	       description="PLG_FIELDS_GALLERY_LAYOUT_DESC"
+	       label="PLG_FIELDS_GALLERY_PARAMS_LAYOUT_LABEL"
+	       description="PLG_FIELDS_GALLERY_PARAMS_LAYOUT_DESC"
 	>
 		<option value="">JDEFAULT</option>
 		<option value="uikit2">UIkit2</option>
-		<option value="uikit3">UIkit3</option>
+	</field>
+
+	<field name="uikit2_lightbox_js"
+	       type="radio"
+	       default="1"
+	       class="btn-group btn-group-yesno"
+	       label="PLG_FIELDS_GALLERY_PARAMS_UIKIT2_LIGHTBOX_JS_LABEL"
+	       description="PLG_FIELDS_GALLERY_PARAMS_UIKIT2_LIGHTBOX_JS_DESC"
+	       showon="layout:uikit2"
+	>
+		<option value="0">JNO</option>
+		<option value="1">JYES</option>
 	</field>
 
 	<field name="items_x_line"
@@ -48,13 +59,26 @@
 		<option value="/">COM_FIELDS_FIELD_USE_GLOBAL</option>
 	</field>
 
+	<field name="caption_overlay"
+	       type="radio"
+	       default="caption"
+	       class="btn-group"
+	       label="PLG_FIELDS_GALLERY_PARAMS_CAPTION_OVERLAY_LABEL"
+	       description="PLG_FIELDS_GALLERY_PARAMS_CAPTION_OVERLAY_DESC"
+	       showon="single_folder:single"
+	>
+		<option value="0">JOFF</option>
+		<option value="caption">Caption</option>
+		<option value="overlay">Overlay</option>
+	</field>
+
 	<field name="single_pictures"
 	       type="subform"
 	       formsource="plugins/fields/gallery/xml/single_picture.xml"
 	       multiple="true"
 	       min="1"
-	       label="Subform Field"
-	       description="Subform Field Description"
+	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_LABEL"
+	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_DESC"
 	       showon="single_folder:single"
 	/>
 </form>

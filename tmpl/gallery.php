@@ -9,7 +9,9 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Filesystem\Folder;
 use Joomla\CMS\Layout\FileLayout;
+use Joomla\CMS\Uri\Uri;
 
 if (!$field->value || $field->value == '-1' || !in_array($context, array('com_content.article', 'com_content.category')))
 {
@@ -38,10 +40,9 @@ $renderer->addIncludePath($themeOverridePath);
 if ($params->single_folder == 'folder')
 {
 	// read the .jpg from the selected directory
-	jimport('joomla.filesystem.folder');
 	$filter     = '(\.png|\.jpg|\.jpeg)';
 	$imagesPath = 'images/' . $params->directory;
-	$images     = JFolder::files($imagesPath, $filter);
+	$images     = Folder::files($imagesPath, $filter);
 }
 else
 {
@@ -49,12 +50,18 @@ else
 }
 
 $displayData = array(
-	'images' => $images,
-	'imagesPath' => $imagesPath,
+	'images'         => $images,
+	'imagesPath'     => $imagesPath,
+	'imageLayout'    => $params->caption_overlay,
 	'thumbCachePath' => $thumbCachePath,
-	'itemsXline' => $params->items_x_line,
+	'itemsXline'     => $params->items_x_line,
 );
-?>
+
+$lightboxPath = '/templates/' . $theme. '/warp/vendor/uikit/js/components/lightbox.js';
+
+if (file_exists(JPATH_ROOT . $lightboxPath) && $frwk == 'uikit2' && $params->uikit2_lightbox_js == "0") : ?>
+	<script src="<?php echo Uri::base(true) . $lightboxPath; ?>"></script>
+<?php endif; ?>
 
 <div class="gallery_container<?php echo $class; ?>">
 	<?php echo $renderer->render($displayData); ?>

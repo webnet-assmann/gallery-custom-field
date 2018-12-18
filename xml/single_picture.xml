@@ -2,7 +2,7 @@
 <form>
 	<field name="picture"
 	       type="media"
-	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_LABEL"
+	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_PICTURE_LABEL"
 	       description=""
 	/>
 
@@ -12,37 +12,23 @@
 	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_ALT_DESC"
 	/>
 
-	<field name="picture_title_on"
-	       type="radio"
-	       class="btn-group btn-group-yesno"
-	       default="0"
-	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_TITLE_ON_LABEL"
-	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_TITLE_ON_DESC"
-	>
-		<option value="0">JNO</option>
-		<option value="1">JYES</option>
-	</field>
-
 	<field name="picture_title"
 	       type="text"
 	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_TITLE_LABEL"
 	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_TITLE_DESC"
-	       showon="picture_title_on:1"
 	/>
 
-	<field name="picture_caption"
-	       type="textarea"
-	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_CAPTION_LABEL"
-	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_CAPTION_DESC"
-	/>
-
-	<field name="picture_caption_position"
+	<field name="title_container"
 	       type="list"
-	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_CAPTION_POSITION_LABEL"
-	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_CAPTION_POSITION_DESC"
-	       showon="picture_caption!:"
+	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_TITLE_CONTAINER_LABEL"
+	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_TITLE_CONTAINER_DESC"
 	>
-		<option value="default">PLG_FIELDS_GALLERY_SINGLE_PICTURE_CAPTION_POSITION_OPTION_DEFAULT_LABEL</option>
-		<option value="overlay">PLG_FIELDS_GALLERY_SINGLE_PICTURE_CAPTION_POSITION_OPTION_OVERLAY_LABEL</option>
+		<option value="h2">h2</option>
+		<option value="h3">h3</option>
+		<option value="h4">h4</option>
+		<option value="h5">h5</option>
+		<option value="div">div</option>
+		<option value="p">p</option>
+		<option value="span">span</option>
 	</field>
 </form>
