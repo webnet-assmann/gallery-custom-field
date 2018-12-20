@@ -1,10 +1,10 @@
 <?php
 /**
  * @package     Joomla.Plugin
- * @subpackage  Fields.Uikitgallery
+ * @subpackage  Fields.Gallery
  *
- * @copyright   Copyright (C) 2017 JUGN.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright   Copyright (C) Guido De Gobbis (JoomTools), Barbara Assmann.
+ * @license     GNU General Public License version 3 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die; ?>
