@@ -36,6 +36,22 @@
 	       description="PLG_FIELDS_GALLERY_PARAMS_ITEMS_X_LINE_DESC"
 	/>
 
+	<field name="thumbnail_width"
+		   type="text"
+		   default="480"
+		   maxlength="10"
+		   label="PLG_FIELDS_GALLERY_THUMBNAIL_WIDTH_LABEL"
+		   description="PLG_FIELDS_THUMBNAIL_WIDTH_DESC"
+	/>
+
+	<field name="thumbnail_height"
+		   type="text"
+		   default="360"
+		   maxlength="10"
+		   label="PLG_FIELDS_GALLERY_THUMBNAIL_HEIGHT_LABEL"
+		   description="PLG_FIELDS_THUMBNAIL_HEIGHT_DESC"
+	/>
+
 	<field name="single_folder"
 	       type="radio"
 	       default="folder"

@@ -3,7 +3,7 @@
 	<field name="picture"
 	       type="media"
 	       label="PLG_FIELDS_GALLERY_SINGLE_PICTURE_PICTURE_LABEL"
-	       description=""
+	       description="PLG_FIELDS_GALLERY_SINGLE_PICTURE_PICTURE_DESC"
 	/>
 
 	<field name="picture_alt"
